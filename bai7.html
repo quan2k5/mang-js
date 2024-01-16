@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=+prompt("nhp vao 1 so n bat ky");
+        var selectedNumber=[];
+        var total;
+        var m;
+        var n;
+        var check=false;
+        var number=[1,5,6,3,2,1,1,5,6,7];
+        for(let i=0;i<number.length-1;i++){
+            total=number[i];
+            selectedNumber=[];
+            m=0;
+            selectedNumber.splice(m,0,number[i]);
+            for(let j=i+1;j<number.length;j++){
+                m++;
+                total+=number[j];
+                selectedNumber.splice(m,0,number[j]);
+                if(total>a){
+                    break;
+                }
+                if(total==a){ 
+                check=true;
+                  break;
+                }
+            }
+            if(check==true){
+                break;
+            }
+        }
+        for(let i=0;i<selectedNumber.length;i++){
+            console.log(selectedNumber[i]);
+        }
+    </script>
+</body>
+</html>
